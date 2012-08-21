@@ -4,6 +4,8 @@ gem 'rails', '3.2.8'
 gem 'heroku'
 # Adding the bootstrap-sass to th Gemfiles.
 gem 'bootstrap-sass'
+# for encrypt the password
+gem 'bcrypt-ruby'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
@@ -11,6 +13,7 @@ gem 'bootstrap-sass'
 group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails', '~> 2.0'
+  gem 'annotate'
 end
 group :production do
   gem 'pg'
