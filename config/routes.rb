@@ -1,6 +1,6 @@
 DemoApp814::Application.routes.draw do
-  get "users/new"
-
+  #get "users/new" # ch7 remove
+  resources :users # ch7 add
   #get "static_pages/home"
 
   #get "static_pages/help"
