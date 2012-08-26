@@ -1,6 +1,8 @@
 DemoApp814::Application.routes.draw do
   #get "users/new" # ch7 remove
   resources :users # ch7 add
+  
+  resources :sessions, only: [:new, :create, :destroy] # add n ch8
   #get "static_pages/home"
 
   #get "static_pages/help"
@@ -13,6 +15,9 @@ DemoApp814::Application.routes.draw do
   match '/help', to:'static_pages#help'
   match '/contact', to:'static_pages#contact'
   match '/signup', to:'users#new'
+  
+  match '/signin', to:'sessions#new'
+  match '/signout', to:'sessions#destroy', via: :delete ## tail ch8 add
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

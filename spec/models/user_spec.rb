@@ -22,6 +22,9 @@ describe User do
 end
 =end
 
+
+
+
 describe User do
 =begin  
   before do
@@ -41,6 +44,8 @@ before do
   it { should respond_to(:password_digest)}
   it { should respond_to(:password) }
   it { should respond_to(:password_confirmation) }
+  # ch8 add for sessions remember token
+  it { should respond_to(:remember_token )}
   
   #it { should be_valid }
  it { should respond_to(:authenticate) }
@@ -127,5 +132,10 @@ before do
             specify { user_for_invalid_password.should be_false }
           end
         end
+    # ch8 add
+    describe "remember token" do
+      before { @user.save }    
+      its(:remember_token) { should_not be_blank }
+    end
   
 end
